@@ -2,8 +2,6 @@ name: lintAndTest
 
 on:
   pull_request:
-    paths:
-      - 'JuniosCI/**/*.swift'
     branches: [ develop ]
 
 jobs:
