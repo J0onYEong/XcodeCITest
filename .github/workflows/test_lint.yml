@@ -1,0 +1,33 @@
+name: lintAndTest
+
+on:
+  pull_request:
+    paths:
+      - 'JuniosCI/**/*.swift'
+    branches: [ develop ]
+
+jobs:
+
+  success-build:
+
+    runs-on: macos-latest
+
+    steps:
+      - name: load-project-files
+        uses: actions/checkout@v4
+      
+      - name: test-project-files
+        run: | 
+          xcodebuild clean test -project JuniosCI.xcodeproj -scheme TestSuccessScheme -destination 'platform=iOS simulator,name=iPhone 15 Pro,OS=17.0'
+
+  failure-build:
+
+    runs-on: macos-latest
+
+    steps:
+      - name: load-project-files
+        uses: actions/checkout@v4
+      
+      - name: test-project-files
+        run: | 
+          xcodebuild test -project JuniosCI.xcodeproj -scheme TestFailureScheme -destination 'platform=iOS simulator,name=iPhone 15 Pro,OS=17.0'
