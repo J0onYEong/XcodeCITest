@@ -1,6 +1,6 @@
 name: lintAndTest
 
-on: dispatch_workflow
+on: workflow_dispatch
 
 jobs:
 
