@@ -28,4 +28,5 @@ jobs:
       
       - name: test-project-files
         run: | 
+          cd JuniosCI
           xcodebuild test -project JuniosCI.xcodeproj -scheme TestFailureScheme -destination 'platform=iOS simulator,name=iPhone 15 Pro,OS=17.0'
