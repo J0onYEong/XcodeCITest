@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "29C62B44-6FB5-4B83-903F-DC22071A7472",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:JuniosCI.xcodeproj",
+      "identifier" : "9B6C513D2C2873B300D0D54A",
+      "name" : "JuniosCI"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:JuniosCI.xcodeproj",
+        "identifier" : "9B6C51532C2873B600D0D54A",
+        "name" : "JuniosCITests"
+      }
+    }
+  ],
+  "version" : 1
+}
