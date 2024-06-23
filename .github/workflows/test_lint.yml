@@ -14,7 +14,7 @@ jobs:
       
       - name: test-project-files
         run: | 
-          echo ls -al
+          ls -al
           cd JuniosCI
           xcodebuild test -project JuniosCI.xcodeproj -scheme TestSuccessScheme -destination 'platform=iOS simulator,name=iPhone 15 Pro,OS=17.0'
 
