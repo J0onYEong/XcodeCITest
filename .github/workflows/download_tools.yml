@@ -5,6 +5,13 @@ jobs:
   flow:
     runs-on: macos-latest
     steps: 
+      - name: Cache
+        id: cache-tuist
+        uses: action/cache@v4
+        with:
+          path: ~/.tuist
+          key: ${{ runner.os }}-tuist
+          
       - name: Install Tuist
         if: steps.cache-tuist.outputs.cache-hit != 'true'
         run: |
