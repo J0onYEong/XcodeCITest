@@ -5,6 +5,8 @@ jobs:
   flow:
     runs-on: macos-latest
     steps: 
+      - uses: actions/checkout@v3
+      
       - name: Cache
         id: cache-tuist
         uses: action/cache@v4
