@@ -54,6 +54,9 @@ jobs:
           -project JuniosCI.xcodeproj \
           -scheme TestSuccessScheme \
           -destination 'platform=iOS simulator,name=iPhone 15 Pro,OS=17.0' \
-          PROVISIONING_PROFILE_SPECIFIER=${{ steps.profile.outputs.profile_key }}
+          CODE_SIGN_STYLE=Manual \
+          CODE_SIGN_IDENTITY="iPhone Developer" \
+          PROVISIONING_PROFILE_SPECIFIER=$PROFILE_UUID \
+          CODE_SIGNING_ALLOWED=YES
           
           
