@@ -11,9 +11,7 @@ jobs:
         with:
           path: |
             ~/.tuist
-          key: tuist-cache-{{ runner.os }}
-          restore-keys: |
-            tuist-cache-{{ runner.os }}-
+          key: tuist-cache-${{ runner.os }}
           
       - name: Install Tuist
         if: steps.cache-tuist.outputs.cache-hit != 'true'
