@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: test-project-files
         run: | 
+          cd JuniosCI
           xcodebuild -project JuniosCI.xcodeproj \
                      -scheme TestSuccessScheme \
                      clean build test \
