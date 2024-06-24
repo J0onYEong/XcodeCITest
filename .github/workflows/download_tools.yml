@@ -11,8 +11,7 @@ jobs:
         with:
           path: |
             ~/.tuist
-            ~/.tuist-bin
-          key: tuist-cache-{{ runner.os }}-{{ hashFiles('**/tuist.yaml') }}
+          key: tuist-cache-{{ runner.os }}
           restore-keys: |
             tuist-cache-{{ runner.os }}-
           
