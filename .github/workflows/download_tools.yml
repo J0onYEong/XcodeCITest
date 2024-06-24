@@ -9,6 +9,7 @@ jobs:
         if: steps.cache-tuist.outputs.cache-hit != 'true'
         run: |
           bash <(curl -Ls https://install.tuist.io)
+          which tuist
         
         
     
