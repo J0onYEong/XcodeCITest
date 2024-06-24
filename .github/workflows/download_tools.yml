@@ -10,8 +10,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            ~/.tuist
-            ~/.tuist-bin
+            /usr/local/bin/tuist
           key: ${{ runner.os }}-tuist
           
       - name: Install Tuist
