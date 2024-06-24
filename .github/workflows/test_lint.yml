@@ -16,7 +16,7 @@ jobs:
         run: | 
           ls -al
           cd JuniosCI
-          xcodebuild test -project JuniosCI.xcodeproj -scheme TestSuccessScheme -destination 'platform=iOS simulator,name=iPhone 15 Pro,OS=17.0' CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+          xcodebuild clean test -project JuniosCI.xcodeproj -scheme TestSuccessScheme -destination 'platform=iOS simulator,name=iPhone 15 Pro,OS=17.0' CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
 
   failure-build:
 
