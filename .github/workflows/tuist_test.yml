@@ -7,6 +7,8 @@ jobs:
     env:
       TUIST_VERSION: 4.12.1
     steps: 
+      - uses: jdx/mise-action@v2
+      
       - name: Cache
         id: cache-tuist
         uses: actions/cache@v4
@@ -17,18 +19,15 @@ jobs:
       - name: Install Tuist
         if: steps.cache-tuist.outputs.cache-hit != 'true'
         run: |
-          rm -rf ~/.tuist
-          bash <(curl -Ls https://install.tuist.io) --version ${{ env.TUIST_VERSION }}
+          mise install tuist@${{ env.TUIST_VERSION }}
           tuist version
 
       - name: checkout repository
         uses: actions/checkout@v4
-        
 
       - name: Test tuist
         run: |
           cd JuniosCITuist
-          tuist generate
           tuist test
         
         
