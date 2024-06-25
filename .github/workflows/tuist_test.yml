@@ -17,8 +17,9 @@ jobs:
       - name: Install Tuist
         if: steps.cache-tuist.outputs.cache-hit != 'true'
         run: |
+          rm -rf ~/.tuist
           bash <(curl -Ls https://install.tuist.io) --version ${{ env.TUIST_VERSION }}
-          which tuist
+          tuist version
 
       - name: checkout repository
         uses: actions/checkout@v4
