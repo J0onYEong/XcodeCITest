@@ -1,0 +1,28 @@
+name: Build Tuist project
+on: workflow_dispatch
+
+jobs:
+  TestProject:
+    runs-on: macos-latest
+    steps: 
+      - name: Cache
+        id: cache-tuist
+        uses: actions/cache@v4
+        with:
+          path: |
+            /usr/local/bin/tuist
+          key: ${{ runner.os }}-tuist
+          
+      - name: Install Tuist
+        if: steps.cache-tuist.outputs.cache-hit != 'true'
+        run: |
+          bash <(curl -Ls https://install.tuist.io)
+          which tuist
+
+      - name: Test tuist
+        runs:
+          cd JuniosCITuist
+          tuist generate
+          tuist test
+        
+        
