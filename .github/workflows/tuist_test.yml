@@ -1,0 +1,30 @@
+name: Build Tuist project
+on: workflow_dispatch
+
+jobs:
+  TestProject:
+    runs-on: macos-latest
+    env:
+      TUIST_VERSION: 4.12.1
+    steps: 
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v2
+      
+      # - name: Cache
+      #   id: cache-tuist
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: /usr/local/bin/tuist
+      #     key: ${{ runner.os }}-tuist-${{ env.TUIST_VERSION }}
+          
+      - name: Install Tuist
+        # if: steps.cache-tuist.outputs.cache-hit != 'true'
+        run: |
+          mise install tuist@${{ env.TUIST_VERSION }}
+
+      - name: Test tuist
+        run: |
+          cd JuniosCITuist
+          tuist test
+        
+        

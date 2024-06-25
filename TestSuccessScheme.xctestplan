@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "25DE8958-98FE-46B4-A160-94100B856378",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:JuniosCI.xcodeproj",
+        "identifier" : "9B6C51532C2873B600D0D54A",
+        "name" : "JuniosCITests"
+      }
+    }
+  ],
+  "version" : 1
+}
