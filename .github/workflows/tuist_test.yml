@@ -7,14 +7,15 @@ jobs:
     env:
       TUIST_VERSION: 4.12.1
     steps: 
+      - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2
       
-      - name: Cache
-        id: cache-tuist
-        uses: actions/cache@v4
-        with:
-          path: /usr/local/bin/tuist
-          key: ${{ runner.os }}-tuist-${{ env.TUIST_VERSION }}
+      # - name: Cache
+      #   id: cache-tuist
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: /usr/local/bin/tuist
+      #     key: ${{ runner.os }}-tuist-${{ env.TUIST_VERSION }}
           
       - name: Install Tuist
         if: steps.cache-tuist.outputs.cache-hit != 'true'
@@ -23,9 +24,6 @@ jobs:
           mise install tuist@${{ env.TUIST_VERSION }}
           mise use -g tuist@{{ env.TUIST_VERSION }}
           tuist version
-
-      - name: checkout repository
-        uses: actions/checkout@v4
 
       - name: Test tuist
         run: |
