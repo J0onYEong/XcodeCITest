@@ -20,7 +20,7 @@ jobs:
           which tuist
 
       - name: Test tuist
-        runs:
+        run:
           cd JuniosCITuist
           tuist generate
           tuist test
