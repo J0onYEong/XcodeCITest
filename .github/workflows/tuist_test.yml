@@ -20,6 +20,7 @@ jobs:
         if: steps.cache-tuist.outputs.cache-hit != 'true'
         run: |
           mise install tuist@${{ env.TUIST_VERSION }}
+          mise use -g tuist@{{ env.TUIST_VERSION }}
           tuist version
 
       - name: checkout repository
