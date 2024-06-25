@@ -22,6 +22,8 @@ jobs:
         run: |
           export RUST_BACKTRACE=full
           mise install tuist@${{ env.TUIST_VERSION }}
+          mise plugin add tuist https://github.com/tuist/tuist
+          mise plugin list
           mise use -g tuist@{{ env.TUIST_VERSION }}
           tuist version
 
