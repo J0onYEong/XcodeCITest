@@ -24,7 +24,7 @@ jobs:
         
 
       - name: Test tuist
-        run:
+        run: |
           cd JuniosCITuist
           tuist generate
           tuist test
