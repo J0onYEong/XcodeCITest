@@ -16,7 +16,7 @@ jobs:
       - name: Install Tuist
         if: steps.cache-tuist.outputs.cache-hit != 'true'
         run: |
-          bash <(curl -Ls https://install.tuist.io)
+          bash <(curl -Ls https://install.tuist.io) --version 4.18.0
           which tuist
 
       - name: checkout repository
