@@ -5,7 +5,7 @@ jobs:
   TestProject:
     runs-on: macos-latest
     env:
-      TUIST_VERSION: "4.18.0"
+      TUIST_VERSION: 4.18.0
     steps: 
       - name: Cache
         id: cache-tuist
@@ -13,7 +13,7 @@ jobs:
         with:
           path: |
             /usr/local/bin/tuist
-          key: ${{ runner.os }}-tuist-$TUIST_VERSION
+          key: ${{ runner.os }}-tuist-${{ env.TUIST_VERSION }}
           
       - name: Install Tuist
         if: steps.cache-tuist.outputs.cache-hit != 'true'
